@@ -13,10 +13,31 @@ f.close()
 duplicates = []  # Return the list of duplicates in this data structure
 
 # Replace the nested for loops below with your improvements
+"""
 for name_1 in names_1:
     for name_2 in names_2:
         if name_1 == name_2:
             duplicates.append(name_1)
+"""
+names= []
+for (list1, list2) in zip(names_1,names_2):
+    
+    if(list1 and list2):
+        names.append(list1)
+        names.append(list2)
+        
+    else:
+        print("you are missing information")   
+
+combined = [i for i in names if i.count(i) > 1]  
+
+   
+print(len(combined))
+
+
+
+
+
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
